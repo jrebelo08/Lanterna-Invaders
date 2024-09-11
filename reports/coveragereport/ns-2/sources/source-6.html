@@ -1,0 +1,144 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ResumeMenuState</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.Carlos.spaceinvaders.State</a>
+</div>
+
+<h1>Coverage Summary for Class: ResumeMenuState (com.Carlos.spaceinvaders.State)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ResumeMenuState</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (9/9)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.Carlos.spaceinvaders.State;
+&nbsp;
+&nbsp;import com.Carlos.spaceinvaders.Game;
+&nbsp;import com.Carlos.spaceinvaders.controller.menu.ResumeMenuController;
+&nbsp;import com.Carlos.spaceinvaders.gui.LanternaGui;
+&nbsp;import com.Carlos.spaceinvaders.model.models.ResumeMenuModel;
+&nbsp;import com.Carlos.spaceinvaders.view.menu.DrawResumeMenu;
+&nbsp;
+&nbsp;import java.io.IOException;
+&nbsp;
+&nbsp;public class ResumeMenuState extends State&lt;ResumeMenuModel&gt; {
+&nbsp;
+&nbsp;    private DrawResumeMenu drawResumeMenu;
+&nbsp;    private ResumeMenuController resumeMenuController;
+&nbsp;    public ResumeMenuState(ResumeMenuModel ResumeMenuModel){
+<b class="fc">&nbsp;        super(ResumeMenuModel);</b>
+<b class="fc">&nbsp;        this.drawResumeMenu = new DrawResumeMenu(getModel());</b>
+<b class="fc">&nbsp;        this.resumeMenuController = new ResumeMenuController(getModel());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void step(String Key, LanternaGui GUI, long Time, Game game) throws IOException {
+<b class="fc">&nbsp;        drawResumeMenu.lanternaDraw(GUI);</b>
+<b class="fc">&nbsp;        resumeMenuController.toDo(game,Key, Time);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setDrawResumeMenu(DrawResumeMenu drawResumeMenu) {
+<b class="fc">&nbsp;        this.drawResumeMenu = drawResumeMenu;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setResumeMenuController(ResumeMenuController resumeController) {
+<b class="fc">&nbsp;        this.resumeMenuController = resumeController;</b>
+&nbsp;    }
+&nbsp;    public DrawResumeMenu getDrawResumeMenu() {
+<b class="fc">&nbsp;        return drawResumeMenu;</b>
+&nbsp;    }
+&nbsp;    public ResumeMenuController getResumeMenuController() {
+<b class="fc">&nbsp;        return resumeMenuController;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-23 00:04</div>
+</div>
+</body>
+</html>

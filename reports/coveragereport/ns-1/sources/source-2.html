@@ -1,0 +1,170 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > HighScore</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.Carlos.spaceinvaders</a>
+</div>
+
+<h1>Coverage Summary for Class: HighScore (com.Carlos.spaceinvaders)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">HighScore</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    66.7%
+  </span>
+  <span class="absValue">
+    (2/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    57.1%
+  </span>
+  <span class="absValue">
+    (20/35)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.Carlos.spaceinvaders;
+&nbsp;import com.google.common.base.Splitter;
+&nbsp;
+&nbsp;import java.io.*;
+&nbsp;import java.nio.charset.StandardCharsets;
+&nbsp;import java.nio.file.*;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;import static com.Carlos.spaceinvaders.model.models.PlayerModel.i;
+&nbsp;
+<b class="nc">&nbsp;public class HighScore {</b>
+<b class="fc">&nbsp;    public static String absolutePath = System.getProperty(&quot;user.dir&quot;) + &quot;/src/main/resources/HighScore.csv&quot;;</b>
+&nbsp;
+&nbsp;
+&nbsp;    public static void updateHighScore(String playerName, int score) {
+&nbsp;        List&lt;String&gt; lines;
+&nbsp;        try {
+<b class="fc">&nbsp;            lines = Files.readAllLines(Paths.get(absolutePath));</b>
+<b class="nc">&nbsp;        } catch (IOException e) {</b>
+<b class="nc">&nbsp;            System.err.println(&quot;Error loading high scores: &quot; + e.getMessage());</b>
+&nbsp;            return;
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+<b class="fc">&nbsp;        boolean playerFound = false;</b>
+<b class="fc">&nbsp;        int lowestScoreIndex = -1;</b>
+<b class="fc">&nbsp;        int lowestScore = Integer.MAX_VALUE;</b>
+&nbsp;
+<b class="fc">&nbsp;        for (String line : lines) {</b>
+<b class="fc">&nbsp;            List&lt;String&gt; parts = Splitter.on(&#39;,&#39;).splitToList(line);</b>
+<b class="fc">&nbsp;            if (parts.size() == 2) {</b>
+<b class="nc">&nbsp;                String storedPlayerName = parts.get(0);</b>
+<b class="nc">&nbsp;                int storedScore = Integer.parseInt(parts.get(1));</b>
+&nbsp;
+<b class="nc">&nbsp;                if (storedPlayerName.equals(playerName)) {</b>
+<b class="nc">&nbsp;                    playerFound = true;</b>
+<b class="nc">&nbsp;                    if (score &gt; storedScore) {</b>
+<b class="nc">&nbsp;                        lines.set(i, playerName + &quot;,&quot; + score);</b>
+&nbsp;                    }
+&nbsp;                    break;
+&nbsp;                }
+&nbsp;
+<b class="nc">&nbsp;                if (storedScore &lt; lowestScore) {</b>
+<b class="nc">&nbsp;                    lowestScore = storedScore;</b>
+<b class="nc">&nbsp;                    lowestScoreIndex = i;</b>
+&nbsp;                }
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+<b class="fc">&nbsp;        if (!playerFound) {</b>
+<b class="fc">&nbsp;            if (lines.size() &lt; 10) {</b>
+<b class="nc">&nbsp;                lines.add(playerName + &quot;,&quot; + score);</b>
+<b class="fc">&nbsp;            } else if (score &gt; lowestScore) {</b>
+<b class="nc">&nbsp;                lines.set(lowestScoreIndex, playerName + &quot;,&quot; + score);</b>
+&nbsp;            }
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(absolutePath), StandardCharsets.UTF_8)) {</b>
+<b class="fc">&nbsp;            for (String line : lines) {</b>
+<b class="fc">&nbsp;                writer.write(line);</b>
+<b class="fc">&nbsp;                writer.newLine();</b>
+<b class="fc">&nbsp;            }</b>
+<b class="fc">&nbsp;        } catch (IOException e) {</b>
+<b class="nc">&nbsp;            System.err.println(&quot;Error saving high scores: &quot; + e.getMessage());</b>
+<b class="fc">&nbsp;        }</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-23 00:04</div>
+</div>
+</body>
+</html>

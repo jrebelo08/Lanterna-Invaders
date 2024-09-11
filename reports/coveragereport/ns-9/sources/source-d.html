@@ -1,0 +1,225 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ResumeMenuModel</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.Carlos.spaceinvaders.model.models</a>
+</div>
+
+<h1>Coverage Summary for Class: ResumeMenuModel (com.Carlos.spaceinvaders.model.models)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ResumeMenuModel</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (13/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (21/21)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ResumeMenuModel$MockitoMock$1519038396</td>
+  </tr>
+  <tr>
+    <td class="name">ResumeMenuModel$MockitoMock$1519038396$auxiliary$1Zq4gBcq</td>
+  </tr>
+  <tr>
+    <td class="name">ResumeMenuModel$MockitoMock$1519038396$auxiliary$4LxVJrVm</td>
+  </tr>
+  <tr>
+    <td class="name">ResumeMenuModel$MockitoMock$1519038396$auxiliary$6oF0m435</td>
+  </tr>
+  <tr>
+    <td class="name">ResumeMenuModel$MockitoMock$1519038396$auxiliary$7BbRmWFW</td>
+  </tr>
+  <tr>
+    <td class="name">ResumeMenuModel$MockitoMock$1519038396$auxiliary$9rYVMTz7</td>
+  </tr>
+  <tr>
+    <td class="name">ResumeMenuModel$MockitoMock$1519038396$auxiliary$CwibJQth</td>
+  </tr>
+  <tr>
+    <td class="name">ResumeMenuModel$MockitoMock$1519038396$auxiliary$h0ERCE9o</td>
+  </tr>
+  <tr>
+    <td class="name">ResumeMenuModel$MockitoMock$1519038396$auxiliary$LIh0SCZ4</td>
+  </tr>
+  <tr>
+    <td class="name">ResumeMenuModel$MockitoMock$1519038396$auxiliary$oul3qlBu</td>
+  </tr>
+  <tr>
+    <td class="name">ResumeMenuModel$MockitoMock$1519038396$auxiliary$pkhfThTV</td>
+  </tr>
+  <tr>
+    <td class="name">ResumeMenuModel$MockitoMock$1519038396$auxiliary$Se7uukO5</td>
+  </tr>
+  <tr>
+    <td class="name">ResumeMenuModel$MockitoMock$1519038396$auxiliary$Tno8T6Oe</td>
+  </tr>
+  <tr>
+    <td class="name">ResumeMenuModel$MockitoMock$1519038396$auxiliary$uyis4IM3</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (13/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (21/21)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.Carlos.spaceinvaders.model.models;
+&nbsp;
+&nbsp;import com.googlecode.lanterna.TextColor;
+&nbsp;
+&nbsp;import java.util.Arrays;
+&nbsp;import java.util.HashMap;
+&nbsp;import java.util.List;
+&nbsp;import java.util.Map;
+&nbsp;
+&nbsp;public class ResumeMenuModel implements Model{
+<b class="fc">&nbsp;    static String text = &quot; ___          ____                      \n&quot; +</b>
+&nbsp;            &quot;|_ _|_ __    / ___| __ _ _ __ ___   ___ \n&quot; +
+&nbsp;            &quot; | || &#39;_ \\  | |  _ / _` | &#39;_ ` _ \\ / _ \\\n&quot; +
+&nbsp;            &quot; | || | | | | |_| | (_| | | | | | |  __/\n&quot; +
+&nbsp;            &quot;|___|_| |_|  \\____|\\__,_|_| |_| |_|\\___|\n&quot;;
+&nbsp;
+&nbsp;
+&nbsp;    private final List&lt;String&gt; entries;
+<b class="fc">&nbsp;    private int entry = 0;</b>
+&nbsp;    private final Map&lt;String, TextColor.RGB&gt; entryColors;
+&nbsp;
+<b class="fc">&nbsp;    public ResumeMenuModel(){</b>
+&nbsp;
+<b class="fc">&nbsp;        this.entries = Arrays.asList(&quot;RESUME&quot;,&quot;RESTART&quot;,&quot;SAVE PROGRESS&quot;,&quot;GO TO MAIN MENU&quot;);</b>
+<b class="fc">&nbsp;        entry = 0;</b>
+<b class="fc">&nbsp;        entryColors = new HashMap&lt;&gt;();</b>
+<b class="fc">&nbsp;        entryColors.put(&quot;RESUME&quot;,new TextColor.RGB(255,0,0));</b>
+<b class="fc">&nbsp;        entryColors.put(&quot;RESTART&quot;, new TextColor.RGB(0,255,0));</b>
+<b class="fc">&nbsp;        entryColors.put(&quot;SAVE/LOAD&quot;,new TextColor.RGB(0,0,255));</b>
+<b class="fc">&nbsp;        entryColors.put(&quot;GO TO MENU&quot;, new TextColor.RGB(255,255,0));</b>
+&nbsp;    }
+&nbsp;    public int getNumEntries() {
+<b class="fc">&nbsp;        return entries.size();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getEntryName(int i){
+<b class="fc">&nbsp;        return entries.get(i);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;String&gt; getEntries() {
+<b class="fc">&nbsp;        return entries;</b>
+&nbsp;    }
+&nbsp;    public TextColor.RGB getColor(String entry) {
+<b class="fc">&nbsp;        return entryColors.get(entry);</b>
+&nbsp;    }
+&nbsp;    public int getEntry(){
+<b class="fc">&nbsp;        return entry;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setEntry(int entry) {
+<b class="fc">&nbsp;        this.entry = entry;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public int getEntriesSize(){
+<b class="fc">&nbsp;        return entries.size();</b>
+&nbsp;    }
+&nbsp;    public String getText(){
+<b class="fc">&nbsp;        return text;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setText(String spaceInvaders) {
+<b class="fc">&nbsp;        this.text = spaceInvaders;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public boolean isSelected(int i){
+<b class="fc">&nbsp;        return i == getCurrentEntry();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public int getCurrentEntry() {
+<b class="fc">&nbsp;        return entry;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-23 00:04</div>
+</div>
+</body>
+</html>

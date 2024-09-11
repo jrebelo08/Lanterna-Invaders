@@ -1,0 +1,145 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > CreateMonsters</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.Carlos.spaceinvaders.model.builders</a>
+</div>
+
+<h1>Coverage Summary for Class: CreateMonsters (com.Carlos.spaceinvaders.model.builders)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CreateMonsters</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    93.8%
+  </span>
+  <span class="absValue">
+    (15/16)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.Carlos.spaceinvaders.model.builders;
+&nbsp;import com.Carlos.spaceinvaders.model.models.MonsterModel;
+&nbsp;import com.Carlos.spaceinvaders.model.models.PositionModel;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;import java.util.Random;
+&nbsp;
+&nbsp;public class CreateMonsters {
+&nbsp;
+&nbsp;    private int width;
+&nbsp;    private List&lt;MonsterModel&gt; monsters;
+&nbsp;
+<b class="fc">&nbsp;    public CreateMonsters(int width, List&lt;MonsterModel&gt; activeMonsters){</b>
+<b class="fc">&nbsp;        this.monsters = activeMonsters;</b>
+<b class="fc">&nbsp;        this.width = width;</b>
+&nbsp;    }
+&nbsp;    private boolean isPositionOccupied(PositionModel position) {
+<b class="fc">&nbsp;        for (MonsterModel monster : monsters) {</b>
+<b class="fc">&nbsp;            if (monster.getPosition().equals(position)) {</b>
+<b class="nc">&nbsp;                return true;</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;    return false;</b>
+&nbsp;    }   
+&nbsp;    private PositionModel getRandomPosM(int y){
+<b class="fc">&nbsp;        Random random = new Random();</b>
+&nbsp;        PositionModel position;
+&nbsp;        do {
+<b class="fc">&nbsp;            int randomNumber = random.nextInt(width - 1) + 1;</b>
+<b class="fc">&nbsp;            position = new PositionModel(randomNumber, y);</b>
+<b class="fc">&nbsp;        } while (isPositionOccupied(position));</b>
+<b class="fc">&nbsp;        return position;</b>
+&nbsp;    }
+&nbsp;    public List&lt;MonsterModel&gt; addMonsters(int numMonstros){
+<b class="fc">&nbsp;        for(int i = 0; i &lt; numMonstros; i++){</b>
+<b class="fc">&nbsp;            monsters.add(new MonsterModel(getRandomPosM(1), 1));</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return monsters;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-23 00:04</div>
+</div>
+</body>
+</html>

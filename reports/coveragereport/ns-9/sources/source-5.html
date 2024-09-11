@@ -1,0 +1,166 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > HighScoresModel</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.Carlos.spaceinvaders.model.models</a>
+</div>
+
+<h1>Coverage Summary for Class: HighScoresModel (com.Carlos.spaceinvaders.model.models)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">HighScoresModel</td>
+<td class="coverageStat">
+  <span class="percent">
+    80%
+  </span>
+  <span class="absValue">
+    (4/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    91.7%
+  </span>
+  <span class="absValue">
+    (11/12)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">HighScoresModel$MockitoMock$762533308</td>
+  </tr>
+  <tr>
+    <td class="name">HighScoresModel$MockitoMock$762533308$auxiliary$gG9XE6Jl</td>
+  </tr>
+  <tr>
+    <td class="name">HighScoresModel$MockitoMock$762533308$auxiliary$LBjV2Lgo</td>
+  </tr>
+  <tr>
+    <td class="name">HighScoresModel$MockitoMock$762533308$auxiliary$qmykdmpC</td>
+  </tr>
+  <tr>
+    <td class="name">HighScoresModel$MockitoMock$762533308$auxiliary$wgcDtkQn</td>
+  </tr>
+  <tr>
+    <td class="name">HighScoresModel$MockitoMock$762533308$auxiliary$xrVjfp5k</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    80%
+  </span>
+  <span class="absValue">
+    (4/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    91.7%
+  </span>
+  <span class="absValue">
+    (11/12)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.Carlos.spaceinvaders.model.models;
+&nbsp;
+&nbsp;import com.Carlos.spaceinvaders.HighScore;
+&nbsp;import com.googlecode.lanterna.TextColor;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public class HighScoresModel {
+&nbsp;    private final String entry;
+<b class="fc">&nbsp;    private String filePath = HighScore.absolutePath;</b>
+&nbsp;    private final List&lt;TextColor.RGB&gt; entries;
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;    public HighScoresModel(){</b>
+<b class="fc">&nbsp;        this.entry = &quot;Exit&quot;;</b>
+<b class="fc">&nbsp;        entries = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        fillList();</b>
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getEntryName(){
+<b class="fc">&nbsp;        return entry;</b>
+&nbsp;    }
+&nbsp;    public String getFilePath() {
+<b class="fc">&nbsp;        return filePath;</b>
+&nbsp;    }
+&nbsp;    private void fillList(){
+<b class="fc">&nbsp;        entries.add(new TextColor.RGB(255, 240, 0));</b>
+<b class="fc">&nbsp;        entries.add(new TextColor.RGB(220, 220, 220));</b>
+<b class="fc">&nbsp;        entries.add(new TextColor.RGB(205, 133, 63));</b>
+<b class="fc">&nbsp;        entries.add(new TextColor.RGB(128, 128, 128));</b>
+&nbsp;    }
+&nbsp;    public TextColor.RGB getColor(int i){
+<b class="nc">&nbsp;        return entries.get(i);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-23 00:04</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,207 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > MonsterModel</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.Carlos.spaceinvaders.model.models</a>
+</div>
+
+<h1>Coverage Summary for Class: MonsterModel (com.Carlos.spaceinvaders.model.models)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MonsterModel</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/12)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">MonsterModel$MockitoMock$2107251377</td>
+  </tr>
+  <tr>
+    <td class="name">MonsterModel$MockitoMock$2107251377$auxiliary$4bzLYeXN</td>
+  </tr>
+  <tr>
+    <td class="name">MonsterModel$MockitoMock$2107251377$auxiliary$4x0SySh0</td>
+  </tr>
+  <tr>
+    <td class="name">MonsterModel$MockitoMock$2107251377$auxiliary$ezcUfpRX</td>
+  </tr>
+  <tr>
+    <td class="name">MonsterModel$MockitoMock$2107251377$auxiliary$fzuPyLoS</td>
+  </tr>
+  <tr>
+    <td class="name">MonsterModel$MockitoMock$2107251377$auxiliary$hgoKwSpK</td>
+  </tr>
+  <tr>
+    <td class="name">MonsterModel$MockitoMock$2107251377$auxiliary$hWTe7T5t</td>
+  </tr>
+  <tr>
+    <td class="name">MonsterModel$MockitoMock$2107251377$auxiliary$iYdwbSP0</td>
+  </tr>
+  <tr>
+    <td class="name">MonsterModel$MockitoMock$2107251377$auxiliary$l4dvdWgP</td>
+  </tr>
+  <tr>
+    <td class="name">MonsterModel$MockitoMock$2107251377$auxiliary$OcTocdQc</td>
+  </tr>
+  <tr>
+    <td class="name">MonsterModel$MockitoMock$2107251377$auxiliary$R4lvPmUH</td>
+  </tr>
+  <tr>
+    <td class="name">MonsterModel$MoveType</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (9/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (16/16)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.Carlos.spaceinvaders.model.models;
+&nbsp;
+&nbsp;public class MonsterModel extends Elements {
+&nbsp;
+<b class="fc">&nbsp;    boolean direction = false;</b>
+&nbsp;    private final int speed;
+&nbsp;    private MoveType moveType;
+<b class="fc">&nbsp;    public enum MoveType{</b>
+<b class="fc">&nbsp;        Diagonal,</b>
+<b class="fc">&nbsp;        Vertical,</b>
+<b class="fc">&nbsp;        Shooter</b>
+&nbsp;    }
+&nbsp;    public MonsterModel(PositionModel position, int speed) {
+<b class="fc">&nbsp;        super(position);</b>
+<b class="fc">&nbsp;        this.speed = speed;</b>
+<b class="fc">&nbsp;        this.moveType = null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void move() {
+<b class="fc">&nbsp;        if (direction)</b>
+<b class="fc">&nbsp;            position.setY(position.getY() - speed);</b>
+&nbsp;        else
+<b class="fc">&nbsp;            position.setY(position.getY() + speed);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public int getSpeed(){
+<b class="fc">&nbsp;        return this.speed;</b>
+&nbsp;    }
+&nbsp;    public void setDirection(boolean b) {
+<b class="fc">&nbsp;        this.direction = b;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public boolean getDirection() {
+<b class="fc">&nbsp;        return direction;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public MoveType getMoveType() {
+<b class="fc">&nbsp;        return moveType;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setMoveType(MoveType moveType) {
+<b class="fc">&nbsp;        this.moveType = moveType;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-23 00:04</div>
+</div>
+</body>
+</html>

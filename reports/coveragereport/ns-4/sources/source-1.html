@@ -1,0 +1,258 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > BulletsController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.Carlos.spaceinvaders.controller.game</a>
+</div>
+
+<h1>Coverage Summary for Class: BulletsController (com.Carlos.spaceinvaders.controller.game)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">BulletsController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    73.3%
+  </span>
+  <span class="absValue">
+    (11/15)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    65.8%
+  </span>
+  <span class="absValue">
+    (52/79)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.Carlos.spaceinvaders.controller.game;
+&nbsp;
+&nbsp;import com.Carlos.spaceinvaders.Game;
+&nbsp;import com.Carlos.spaceinvaders.controller.Controller;
+&nbsp;import com.Carlos.spaceinvaders.model.models.*;
+&nbsp;import com.Carlos.spaceinvaders.model.models.PowerUpModel;
+&nbsp;
+&nbsp;
+&nbsp;import java.util.Iterator;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public class BulletsController extends Controller&lt;List&lt;BulletModel&gt;&gt; {
+&nbsp;
+&nbsp;    private List&lt;MonsterModel&gt; activeMonsters;
+&nbsp;    private List&lt;PowerUpModel&gt; activePowerUps;
+&nbsp;    private PlayerModel playerModel;
+&nbsp;    private ScoreModel scoreModel;
+&nbsp;    private long lastScoreBoostTime;
+&nbsp;    private long lastFireRateBoostTime;
+&nbsp;    private long upTime;
+&nbsp;    private int arenaH;
+&nbsp;    public BulletsController(List&lt;BulletModel&gt; bullets, List&lt;MonsterModel&gt; activeMonsters, List&lt;PowerUpModel&gt; activePowerUps, PlayerModel playerModel, ScoreModel scoreModel, int arenaH){
+<b class="fc">&nbsp;        super(bullets);</b>
+<b class="fc">&nbsp;        this.activeMonsters = activeMonsters;</b>
+<b class="fc">&nbsp;        this.activePowerUps = activePowerUps;</b>
+<b class="fc">&nbsp;        this.playerModel = playerModel;</b>
+<b class="fc">&nbsp;        this.scoreModel = scoreModel;</b>
+<b class="fc">&nbsp;        this.lastScoreBoostTime = 0;</b>
+<b class="fc">&nbsp;        this.lastFireRateBoostTime = 0;</b>
+<b class="fc">&nbsp;        this.upTime = 10000;</b>
+<b class="fc">&nbsp;        this.arenaH = arenaH;</b>
+&nbsp;    }
+&nbsp;    @Override
+&nbsp;    public void toDo(Game game, String keyPressed, long Time) {
+<b class="fc">&nbsp;        Iterator&lt;BulletModel&gt; iterator = getModel().iterator();</b>
+<b class="fc">&nbsp;        while (iterator.hasNext()) {</b>
+<b class="nc">&nbsp;            BulletModel bullet = iterator.next();</b>
+<b class="nc">&nbsp;            move(bullet,Time);</b>
+<b class="nc">&nbsp;            bullet.processActive(arenaH);</b>
+<b class="nc">&nbsp;            if (!bullet.getActive()){</b>
+<b class="nc">&nbsp;                iterator.remove();</b>
+&nbsp;            }
+<b class="nc">&nbsp;        }</b>
+&nbsp;
+<b class="fc">&nbsp;        if(lastScoreBoostTime != 0 &amp;&amp; Time - lastScoreBoostTime &gt; upTime){</b>
+<b class="nc">&nbsp;            revertScoreBoost();</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if(lastFireRateBoostTime != 0 &amp;&amp; Time - lastFireRateBoostTime &gt; upTime){</b>
+<b class="nc">&nbsp;            revertFireRateBoost();</b>
+&nbsp;        }
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    public void move(BulletModel bullet,long Time) {
+<b class="fc">&nbsp;        PositionModel newPosition = calculateNewPosition(bullet);</b>
+&nbsp;
+<b class="fc">&nbsp;        boolean colidiu = colide(newPosition, Time, bullet.getDirection());</b>
+&nbsp;
+<b class="fc">&nbsp;        if(colidiu) {</b>
+<b class="fc">&nbsp;            bullet.setActive(false);</b>
+&nbsp;
+&nbsp;        }else{
+<b class="fc">&nbsp;            bullet.getPosition().setY(newPosition.getY());</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;    PositionModel calculateNewPosition(BulletModel bullet) {
+<b class="fc">&nbsp;        int newY = bullet.getDirection() ? bullet.getPosition().getY() - bullet.getSpeed() : bullet.getPosition().getY() + bullet.getSpeed();</b>
+<b class="fc">&nbsp;        return new PositionModel(bullet.getPosition().getX(), newY);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    boolean colide(PositionModel nextPosition, long Time, boolean direction){
+<b class="fc">&nbsp;        MonsterModel monster = isMonster(nextPosition);</b>
+<b class="fc">&nbsp;        PowerUpModel powerUp = isPowerUp(nextPosition);</b>
+<b class="fc">&nbsp;        boolean playerhit = isPlayer(nextPosition);</b>
+<b class="fc">&nbsp;        if(monster != null &amp;&amp; direction){</b>
+<b class="fc">&nbsp;            activeMonsters.remove(monster);</b>
+<b class="fc">&nbsp;            this.scoreModel.incrementScore();</b>
+<b class="fc">&nbsp;            return true;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if(powerUp != null &amp;&amp; direction){</b>
+<b class="fc">&nbsp;            processPowerUp(powerUp,Time);</b>
+<b class="fc">&nbsp;            activePowerUps.remove(powerUp);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return playerhit;</b>
+&nbsp;    }
+&nbsp;    MonsterModel isMonster(PositionModel nextPosition){
+<b class="fc">&nbsp;        for(MonsterModel monster : activeMonsters){</b>
+<b class="fc">&nbsp;            if(monster.getPosition().equals(nextPosition)){</b>
+<b class="fc">&nbsp;                return monster;</b>
+&nbsp;            }
+<b class="nc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return null;</b>
+&nbsp;    }
+&nbsp;    boolean isPlayer(PositionModel nextPosition){
+<b class="fc">&nbsp;        if(playerModel.getPosition().equals(nextPosition) || playerModel.getPosition().getLeftBound().equals(nextPosition) || playerModel.getPosition().getRightBound().equals(nextPosition)){</b>
+<b class="fc">&nbsp;            playerModel.decrementHitPoints();</b>
+<b class="fc">&nbsp;            return true;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;    PowerUpModel isPowerUp(PositionModel newPosition) {
+<b class="fc">&nbsp;        for (PowerUpModel powerUp : activePowerUps) {</b>
+<b class="fc">&nbsp;            if (newPosition.equals(powerUp.getPosition())) {</b>
+<b class="fc">&nbsp;                return powerUp;</b>
+&nbsp;            }
+<b class="nc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return null;</b>
+&nbsp;    }
+&nbsp;    void processPowerUp(PowerUpModel powerUp, long Time){
+<b class="fc">&nbsp;        if(powerUp.getPowerUpType() == PowerUpModel.PowerUpType.HealthBoost) HealthBoost();</b>
+<b class="fc">&nbsp;        if(powerUp.getPowerUpType() == PowerUpModel.PowerUpType.ScoreBoost){</b>
+<b class="fc">&nbsp;            ScoreBoost();</b>
+<b class="fc">&nbsp;            lastScoreBoostTime = Time;</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if(powerUp.getPowerUpType() == PowerUpModel.PowerUpType.FireRateBoost){</b>
+<b class="nc">&nbsp;            FireRateBoost();</b>
+<b class="nc">&nbsp;            lastFireRateBoostTime = Time;</b>
+&nbsp;
+&nbsp;        }
+<b class="fc">&nbsp;        powerUp.incrementActive();</b>
+&nbsp;    }
+&nbsp;    void ScoreBoost(){
+<b class="fc">&nbsp;        scoreModel.setIncrementValue(5);</b>
+<b class="fc">&nbsp;        playerModel.setPowerUpType(PowerUpModel.PowerUpType.ScoreBoost);</b>
+&nbsp;    }
+&nbsp;    private void revertScoreBoost(){
+<b class="nc">&nbsp;        scoreModel.setIncrementValue(1);</b>
+<b class="nc">&nbsp;        if(!checkActivity())</b>
+<b class="nc">&nbsp;            playerModel.setPowerUpType(null);</b>
+<b class="nc">&nbsp;        lastScoreBoostTime = 0;</b>
+&nbsp;    }
+&nbsp;    void HealthBoost(){
+<b class="fc">&nbsp;        playerModel.incrementHitPoints();</b>
+&nbsp;
+&nbsp;    }
+&nbsp;    private void FireRateBoost(){
+<b class="nc">&nbsp;        playerModel.setDelayShooting(250);</b>
+<b class="nc">&nbsp;        playerModel.setPowerUpType(PowerUpModel.PowerUpType.FireRateBoost);</b>
+&nbsp;    }
+&nbsp;    private void revertFireRateBoost(){
+<b class="nc">&nbsp;        playerModel.setDelayShooting(500);</b>
+<b class="nc">&nbsp;        if(!checkActivity())</b>
+<b class="nc">&nbsp;             playerModel.setPowerUpType(null);</b>
+<b class="nc">&nbsp;        lastFireRateBoostTime = 0;</b>
+&nbsp;    }
+&nbsp;    private boolean checkActivity(){
+<b class="nc">&nbsp;        for(PowerUpModel powerup : activePowerUps){</b>
+<b class="nc">&nbsp;            if(powerup.isActive() == 1){</b>
+<b class="nc">&nbsp;                return true;</b>
+&nbsp;            }
+<b class="nc">&nbsp;        }</b>
+<b class="nc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-23 00:04</div>
+</div>
+</body>
+</html>

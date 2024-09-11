@@ -1,0 +1,149 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > TutorialController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.Carlos.spaceinvaders.controller.menu</a>
+</div>
+
+<h1>Coverage Summary for Class: TutorialController (com.Carlos.spaceinvaders.controller.menu)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TutorialController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">TutorialController$MockitoMock$1872894745</td>
+  </tr>
+  <tr>
+    <td class="name">TutorialController$MockitoMock$1872894745$auxiliary$Bc0sHqbZ</td>
+  </tr>
+  <tr>
+    <td class="name">TutorialController$MockitoMock$1872894745$auxiliary$dKM4F1wn</td>
+  </tr>
+  <tr>
+    <td class="name">TutorialController$MockitoMock$1872894745$auxiliary$ec0RtFpd</td>
+  </tr>
+  <tr>
+    <td class="name">TutorialController$MockitoMock$1872894745$auxiliary$wRmmOWsk</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.Carlos.spaceinvaders.controller.menu;
+&nbsp;
+&nbsp;import com.Carlos.spaceinvaders.Game;
+&nbsp;import com.Carlos.spaceinvaders.State.MenuState;
+&nbsp;import com.Carlos.spaceinvaders.controller.Controller;
+&nbsp;import com.Carlos.spaceinvaders.model.models.MenuModel;
+&nbsp;import com.Carlos.spaceinvaders.model.models.TutorialModel;
+&nbsp;
+&nbsp;import java.util.Objects;
+&nbsp;
+&nbsp;public class TutorialController extends Controller&lt;TutorialModel&gt; {
+&nbsp;    public TutorialController(TutorialModel option) {
+<b class="fc">&nbsp;        super(option);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public void toDo(Game game, String keyPressed, long Time) {
+<b class="fc">&nbsp;        if (Objects.equals(keyPressed, &quot;Enter&quot;)) game.pushState(new MenuState(new MenuModel()));</b>
+<b class="fc">&nbsp;        if (keyPressed != null &amp;&amp; (keyPressed.equals(&quot;Escape&quot;) || keyPressed.equals(&quot;Quit&quot;)) ) {</b>
+<b class="fc">&nbsp;            game.popState();</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-23 00:04</div>
+</div>
+</body>
+</html>

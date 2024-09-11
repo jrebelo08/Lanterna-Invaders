@@ -1,0 +1,194 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > DrawTutorial</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.Carlos.spaceinvaders.view.menu</a>
+</div>
+
+<h1>Coverage Summary for Class: DrawTutorial (com.Carlos.spaceinvaders.view.menu)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DrawTutorial</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (34/34)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">DrawTutorial$MockitoMock$432025814</td>
+  </tr>
+  <tr>
+    <td class="name">DrawTutorial$MockitoMock$432025814$auxiliary$4MyI0kEc</td>
+  </tr>
+  <tr>
+    <td class="name">DrawTutorial$MockitoMock$432025814$auxiliary$8IghtdpT</td>
+  </tr>
+  <tr>
+    <td class="name">DrawTutorial$MockitoMock$432025814$auxiliary$F2F5ejKt</td>
+  </tr>
+  <tr>
+    <td class="name">DrawTutorial$MockitoMock$432025814$auxiliary$w0863L9R</td>
+  </tr>
+  <tr>
+    <td class="name">DrawTutorial$MockitoMock$432025814$auxiliary$ZYySqCWI</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (34/34)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.Carlos.spaceinvaders.view.menu;
+&nbsp;
+&nbsp;import com.Carlos.spaceinvaders.gui.LanternaGui;
+&nbsp;import com.Carlos.spaceinvaders.model.models.PositionModel;
+&nbsp;import com.Carlos.spaceinvaders.model.models.TutorialModel;
+&nbsp;import com.Carlos.spaceinvaders.view.Viewer;
+&nbsp;import com.googlecode.lanterna.TextColor;
+&nbsp;
+&nbsp;public class DrawTutorial extends Viewer&lt;TutorialModel&gt; {
+&nbsp;
+&nbsp;    public DrawTutorial(TutorialModel tutorialModel){
+<b class="fc">&nbsp;        super(tutorialModel);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    protected void draw(LanternaGui gui) {
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(34, 7-2), &quot;C&quot;, new TextColor.RGB(178, 73 ,210));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(35, 7-2), &quot;O&quot;, new TextColor.RGB(178, 73 ,210));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(36, 7-2), &quot;N&quot;, new TextColor.RGB(178, 73 ,210));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(37, 7-2), &quot;T&quot;, new TextColor.RGB(178, 73 ,210));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(38, 7-2), &quot;R&quot;, new TextColor.RGB(178, 73 ,210));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(39, 7-2), &quot;O&quot;, new TextColor.RGB(178, 73 ,210));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(40, 7-2), &quot;L&quot;, new TextColor.RGB(178, 73 ,210));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(41, 7-2), &quot;S&quot;, new TextColor.RGB(178, 73 ,210));</b>
+&nbsp;
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(29, 10-2), &quot;UP/SPACE&quot;, new TextColor.RGB(255, 255 ,0));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(38, 10-2), &quot;SHOOT&quot;, new TextColor.RGB(255, 255 ,255));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(29, 12-2), &quot;LEFT&quot;, new TextColor.RGB(255, 255 ,0));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(38, 12-2), &quot;MOVE LEFT&quot;,new TextColor.RGB(255, 255 ,255));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(29, 14-2), &quot;RIGHT&quot;, new TextColor.RGB(255, 255 ,0));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(38, 14-2), &quot;MOVE RIGHT&quot;,new TextColor.RGB(255, 255 ,255));</b>
+&nbsp;
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(29, 16-2), &quot;Q/ESC&quot;, new TextColor.RGB(255, 255 ,0));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(38, 16-2), &quot;OPEN IN GAME MENU&quot;,new TextColor.RGB(255, 255 ,255));</b>
+&nbsp;
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(34, 19-2), &quot;GAME INFO&quot;, new TextColor.RGB(178, 73 ,210));</b>
+&nbsp;
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(29, 22-2), &quot;]&quot;, new TextColor.RGB(255, 0 ,0));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(38, 22-2), &quot;KILL THE MONSTERS&quot;,new TextColor.RGB(255, 255 ,255));</b>
+&nbsp;
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(29, 24-2), &quot;+&quot;, new TextColor.RGB(0, 255 ,0));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(31, 24-2), &quot;★&quot;, new TextColor.RGB(255, 255 ,0));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(33, 24-2), &quot;$&quot;, new TextColor.RGB(0, 0 ,255));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(38, 24-2), &quot;SHOOT THE POWERUPS TO GAIN POWERS&quot;,new TextColor.RGB(255, 255 ,255));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(29, 24), &quot;♥&quot;,new TextColor.RGB(255, 0 ,0));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(38, 24), &quot;YOU HAVE ONLY 3 LIVES&quot;,new TextColor.RGB(255, 255 ,255));</b>
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(35, 27), &quot;POWERUPS&quot;, new TextColor.RGB(178, 73 ,210));</b>
+&nbsp;
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(29, 30), &quot;+&quot;, new TextColor.RGB(0, 255 ,0));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(38, 30), &quot;EXTRA LIFE&quot;,new TextColor.RGB(255, 255 ,255));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(29, 32), &quot;★&quot;, new TextColor.RGB(255, 255 ,0));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(38, 32), &quot;5X SCORE BOOST&quot;,new TextColor.RGB(255, 255 ,255));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(29, 34), &quot;$&quot;, new TextColor.RGB(0, 0 ,255));</b>
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(38, 34), &quot;FIRE RATE BOOST&quot;,new TextColor.RGB(255, 255 ,255));</b>
+&nbsp;
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;        gui.drawText(new PositionModel(36, 38),getModel().getEntryName(),new TextColor.RGB(255, 0 ,0));</b>
+&nbsp;
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-23 00:04</div>
+</div>
+</body>
+</html>

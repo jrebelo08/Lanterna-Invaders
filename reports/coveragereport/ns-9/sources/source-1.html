@@ -1,0 +1,218 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ArenaModel</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.Carlos.spaceinvaders.model.models</a>
+</div>
+
+<h1>Coverage Summary for Class: ArenaModel (com.Carlos.spaceinvaders.model.models)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ArenaModel</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (19/19)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ArenaModel$MockitoMock$301205606</td>
+  </tr>
+  <tr>
+    <td class="name">ArenaModel$MockitoMock$301205606$auxiliary$5bp11q2x</td>
+  </tr>
+  <tr>
+    <td class="name">ArenaModel$MockitoMock$301205606$auxiliary$8UApboqe</td>
+  </tr>
+  <tr>
+    <td class="name">ArenaModel$MockitoMock$301205606$auxiliary$a1AFpiAf</td>
+  </tr>
+  <tr>
+    <td class="name">ArenaModel$MockitoMock$301205606$auxiliary$ACVLjHjc</td>
+  </tr>
+  <tr>
+    <td class="name">ArenaModel$MockitoMock$301205606$auxiliary$Az5y2Yvp</td>
+  </tr>
+  <tr>
+    <td class="name">ArenaModel$MockitoMock$301205606$auxiliary$CEwatz6G</td>
+  </tr>
+  <tr>
+    <td class="name">ArenaModel$MockitoMock$301205606$auxiliary$fqzdiXm9</td>
+  </tr>
+  <tr>
+    <td class="name">ArenaModel$MockitoMock$301205606$auxiliary$KCK84A6j</td>
+  </tr>
+  <tr>
+    <td class="name">ArenaModel$MockitoMock$301205606$auxiliary$NwtQ2H7i</td>
+  </tr>
+  <tr>
+    <td class="name">ArenaModel$MockitoMock$301205606$auxiliary$pzLS1h5V</td>
+  </tr>
+  <tr>
+    <td class="name">ArenaModel$MockitoMock$301205606$auxiliary$qmN7WWG3</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (19/19)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.Carlos.spaceinvaders.model.models;
+&nbsp;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;
+&nbsp;public class ArenaModel implements Model {
+&nbsp;
+&nbsp;
+&nbsp;    private final int width;
+&nbsp;    private final int height;
+&nbsp;
+&nbsp;    private List&lt;BulletModel&gt; activeBullets;
+&nbsp;    private List&lt;WallModel&gt; walls;
+&nbsp;    private List&lt;MonsterModel&gt; activeMonsters;
+&nbsp;    private List&lt;PowerUpModel&gt; activePowerUps;
+&nbsp;    private MonsterFactoryModel monsterFactoryModel;
+&nbsp;    private ScoreModel score;
+&nbsp;
+&nbsp;    private PlayerModel player;
+&nbsp;
+<b class="fc">&nbsp;    public ArenaModel(int x, int y) {</b>
+<b class="fc">&nbsp;        this.width = x;</b>
+<b class="fc">&nbsp;        this.height = y;</b>
+<b class="fc">&nbsp;        this.player = new PlayerModel(new PositionModel(40, y - 2), 3);</b>
+<b class="fc">&nbsp;        this.score = new ScoreModel(new PositionModel(70, y - 3));</b>
+<b class="fc">&nbsp;        this.monsterFactoryModel = new MonsterFactoryModel();</b>
+<b class="fc">&nbsp;        this.activeBullets = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        this.activeMonsters = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        this.activePowerUps = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        this.walls = new ArrayList&lt;&gt;();</b>
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    public int getWidth() {
+<b class="fc">&nbsp;        return width;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public int getHeight() {
+<b class="fc">&nbsp;        return height;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public PlayerModel getPlayer() {
+<b class="fc">&nbsp;        return this.player;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;BulletModel&gt; getActiveBullets() {
+<b class="fc">&nbsp;        return activeBullets;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;MonsterModel&gt; getActiveMonsters() {
+<b class="fc">&nbsp;        return activeMonsters;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;WallModel&gt; getWalls() {
+<b class="fc">&nbsp;        return walls;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public ScoreModel getScore() {
+<b class="fc">&nbsp;        return score;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;PowerUpModel&gt; getActivePowerUps() {
+<b class="fc">&nbsp;        return activePowerUps;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public MonsterFactoryModel getMonsterFactoryModel() {
+<b class="fc">&nbsp;        return monsterFactoryModel;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-23 00:04</div>
+</div>
+</body>
+</html>

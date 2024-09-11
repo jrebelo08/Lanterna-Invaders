@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>State.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package com.Carlos.spaceinvaders.State;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.Carlos.spaceinvaders.Game;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.Carlos.spaceinvaders.gui.LanternaGui;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.io.IOException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public abstract class State &#60;T&#62; {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private final T model;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public State(T model) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.model = model;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public T getModel() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_15'/>
+15
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_15'>1</a>
+<span>
+1. getModel : replaced return value with null for com/Carlos/spaceinvaders/State/State::getModel &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return model;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public abstract void step(String Key, LanternaGui GUI, long Time, Game game) throws IOException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@378456cb_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@378456cb_15'>15</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@378456cb_15'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getModel<br/><b>Killed by : </b>com.Carlos.spaceinvaders.State.HighScoresStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.HighScoresStateTest]/[method:testConstructor()]</span></span> replaced return value with null for com/Carlos/spaceinvaders/State/State::getModel &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>com.Carlos.spaceinvaders.State.GameStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.GameStateTest]/[method:testStep()] (174 ms)</li><li>com.Carlos.spaceinvaders.State.HighScoresStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.HighScoresStateTest]/[method:testSetDrawHighScores()] (1 ms)</li><li>com.Carlos.spaceinvaders.State.ResumeMenuStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.ResumeMenuStateTest]/[method:setDrawResumeMenu_ShouldSetDrawResumeMenu()] (71 ms)</li><li>com.Carlos.spaceinvaders.State.HighScoresStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.HighScoresStateTest]/[method:testSetHighScoresController()] (2 ms)</li><li>com.Carlos.spaceinvaders.State.HighScoresStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.HighScoresStateTest]/[method:testConstructor()] (1 ms)</li><li>com.Carlos.spaceinvaders.controller.menu.HighScoresControllerTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.controller.menu.HighScoresControllerTest]/[method:testToDo_EnterKey()] (1 ms)</li><li>com.Carlos.spaceinvaders.controller.menu.TutorialControllerTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.controller.menu.TutorialControllerTest]/[method:testToDo_EnterKey_GamePushState()] (2 ms)</li><li>com.Carlos.spaceinvaders.State.ResumeMenuStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.ResumeMenuStateTest]/[method:step_ShouldCallLanternaDrawAndToDoMethods()] (3 ms)</li><li>com.Carlos.spaceinvaders.State.GameOverMenuStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.GameOverMenuStateTest]/[method:step_ShouldCallLanternaDrawAndToDoMethods()] (120 ms)</li><li>com.Carlos.spaceinvaders.State.TutorialStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.TutorialStateTest]/[method:setDrawTutorial_ShouldSetDrawTutorial()] (1 ms)</li><li>com.Carlos.spaceinvaders.controller.game.GameControllerTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.controller.game.GameControllerTest]/[method:testToDoEscapeKey()] (20 ms)</li><li>com.Carlos.spaceinvaders.State.ResumeMenuStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.ResumeMenuStateTest]/[method:setResumeMenuController_ShouldSetResumeMenuController()] (1 ms)</li><li>com.Carlos.spaceinvaders.State.MenuStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.MenuStateTest]/[method:setDrawMenu_ShouldSetDrawMenu()] (2 ms)</li><li>com.Carlos.spaceinvaders.controller.game.GameControllerTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.controller.game.GameControllerTest]/[method:testToDoQuitKey()] (24 ms)</li><li>com.Carlos.spaceinvaders.State.GameStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.GameStateTest]/[method:testSetDrawGame()] (46 ms)</li><li>com.Carlos.spaceinvaders.controller.game.GameControllerTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.controller.game.GameControllerTest]/[method:testEndGame()] (201 ms)</li><li>com.Carlos.spaceinvaders.State.TutorialStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.TutorialStateTest]/[method:setTutorialController_ShouldSetTutorialController()] (45 ms)</li><li>com.Carlos.spaceinvaders.controller.menu.ResumeMenuControllerTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.controller.menu.ResumeMenuControllerTest]/[method:testSelect_Restart()] (48 ms)</li><li>com.Carlos.spaceinvaders.State.GameStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.GameStateTest]/[method:testSetGameController()] (22 ms)</li><li>com.Carlos.spaceinvaders.State.HighScoresStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.HighScoresStateTest]/[method:testStep()] (56 ms)</li><li>com.Carlos.spaceinvaders.controller.game.GameControllerTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.controller.game.GameControllerTest]/[method:testToDoGameOver()] (26 ms)</li><li>com.Carlos.spaceinvaders.State.GameOverMenuStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.GameOverMenuStateTest]/[method:setDrawGameOverMenu_ShouldSetDrawGameOverMenu()] (504 ms)</li><li>com.Carlos.spaceinvaders.State.MenuStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.MenuStateTest]/[method:step_ShouldCallLanternaDrawAndMenuControllerToDo()] (4 ms)</li><li>com.Carlos.spaceinvaders.controller.game.GameControllerTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.controller.game.GameControllerTest]/[method:testToDo()] (24 ms)</li><li>com.Carlos.spaceinvaders.State.MenuStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.MenuStateTest]/[method:setMenuController_ShouldSetMenuController()] (87 ms)</li><li>com.Carlos.spaceinvaders.State.TutorialStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.TutorialStateTest]/[method:step_ShouldCallLanternaDrawAndToDoMethods()] (3 ms)</li><li>com.Carlos.spaceinvaders.State.GameOverMenuStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.GameOverMenuStateTest]/[method:setGameOverMenuController_ShouldSetGameOverMenuController()] (2 ms)</li><li>com.Carlos.spaceinvaders.controller.menu.MenuControllerTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.controller.menu.MenuControllerTest]/[method:testSelect_Tutorial()] (1 ms)</li><li>com.Carlos.spaceinvaders.State.GameStateTest.[engine:junit-jupiter]/[class:com.Carlos.spaceinvaders.State.GameStateTest]/[method:testConstructor()] (14 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.9.4
+
+</body>
+</html>

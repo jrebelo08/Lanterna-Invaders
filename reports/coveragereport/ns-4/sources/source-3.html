@@ -1,0 +1,217 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > GameController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.Carlos.spaceinvaders.controller.game</a>
+</div>
+
+<h1>Coverage Summary for Class: GameController (com.Carlos.spaceinvaders.controller.game)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">GameController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    94.9%
+  </span>
+  <span class="absValue">
+    (37/39)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">GameController$MockitoMock$951137129</td>
+  </tr>
+  <tr>
+    <td class="name">GameController$MockitoMock$951137129$auxiliary$mA5zHNPf</td>
+  </tr>
+  <tr>
+    <td class="name">GameController$MockitoMock$951137129$auxiliary$o0vhh85v</td>
+  </tr>
+  <tr>
+    <td class="name">GameController$MockitoMock$951137129$auxiliary$PpfUfVzu</td>
+  </tr>
+  <tr>
+    <td class="name">GameController$MockitoMock$951137129$auxiliary$R2dmRcfA</td>
+  </tr>
+  <tr>
+    <td class="name">GameController$MockitoMock$951137129$auxiliary$VTJpxMgk</td>
+  </tr>
+  <tr>
+    <td class="name">GameController$MockitoMock$951137129$auxiliary$xDCPdpDc</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    94.9%
+  </span>
+  <span class="absValue">
+    (37/39)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.Carlos.spaceinvaders.controller.game;
+&nbsp;
+&nbsp;import com.Carlos.spaceinvaders.Game;
+&nbsp;
+&nbsp;import com.Carlos.spaceinvaders.HighScore;
+&nbsp;import com.Carlos.spaceinvaders.State.GameOverMenuState;
+&nbsp;import com.Carlos.spaceinvaders.State.ResumeMenuState;
+&nbsp;import com.Carlos.spaceinvaders.controller.Controller;
+&nbsp;import com.Carlos.spaceinvaders.controller.SoundController;
+&nbsp;import com.Carlos.spaceinvaders.model.models.*;
+&nbsp;
+&nbsp;
+&nbsp;public class GameController extends Controller&lt;ArenaModel&gt; {
+&nbsp;    PlayerController playerController;
+&nbsp;    BulletsController bulletsController;
+&nbsp;    private final MonsterControllerFactory monsterControllerFactory;
+&nbsp;    private final PowerUpFactory  powerUpFactory;
+&nbsp;    private DifficultyController difficultyController;
+&nbsp;    private final PowerUpController powerUpController;
+&nbsp;    private final MonsterFactoryController monsterFactoryController;
+&nbsp;    private final WallFactory wallFactory;
+&nbsp;
+&nbsp;
+&nbsp;    private SoundController soundController;
+&nbsp;
+&nbsp;    public GameController(ArenaModel arenaModel) {
+<b class="fc">&nbsp;        super(arenaModel);</b>
+<b class="fc">&nbsp;        this.soundController = new SoundController();</b>
+<b class="fc">&nbsp;        this.wallFactory = new WallFactory(getModel().getWidth(), getModel().getHeight(), getModel().getWalls());</b>
+<b class="fc">&nbsp;        this.playerController = new PlayerController(getModel().getPlayer(), getModel().getWidth(), arenaModel.getActiveBullets(),soundController);</b>
+<b class="fc">&nbsp;        this.bulletsController = new BulletsController(getModel().getActiveBullets(), getModel().getActiveMonsters(),getModel().getActivePowerUps(), getModel().getPlayer(), getModel().getScore(),getModel().getHeight());</b>
+<b class="fc">&nbsp;        this.monsterControllerFactory = new MonsterControllerFactory(getModel().getWidth(),getModel().getHeight(), getModel().getActiveBullets(), getModel().getActiveMonsters(), getModel().getMonsterFactoryModel());</b>
+<b class="fc">&nbsp;        this.powerUpFactory = new PowerUpFactory(getModel().getActivePowerUps());</b>
+<b class="fc">&nbsp;        this.powerUpController = new PowerUpController(getModel().getActivePowerUps());</b>
+<b class="fc">&nbsp;        this.monsterFactoryController = new MonsterFactoryController(getModel().getMonsterFactoryModel(),getModel().getActiveMonsters());</b>
+<b class="fc">&nbsp;        this.difficultyController = new DifficultyController(getModel().getMonsterFactoryModel(), getModel().getScore());</b>
+&nbsp;    }
+&nbsp;    @Override
+&nbsp;    public void toDo(Game game,String keyPressed, long Time){
+&nbsp;
+<b class="fc">&nbsp;        if (keyPressed != null &amp;&amp; (keyPressed.equals(&quot;Escape&quot;) || keyPressed.equals(&quot;Quit&quot;)) ) {</b>
+<b class="fc">&nbsp;            game.pushState(new ResumeMenuState(new ResumeMenuModel()));</b>
+&nbsp;
+<b class="fc">&nbsp;            int finalScore = getModel().getScore().getScore();</b>
+<b class="fc">&nbsp;            PlayerModel playerModel = getModel().getPlayer();</b>
+<b class="fc">&nbsp;            String playerName = playerModel.getPlayerNameModel();</b>
+<b class="fc">&nbsp;            if (playerName == null) {</b>
+<b class="fc">&nbsp;                playerName = playerModel.getPlayerNameModel();</b>
+&nbsp;            }
+&nbsp;
+<b class="fc">&nbsp;            HighScore.updateHighScore(playerName, finalScore);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        powerUpFactory.createPowerUp(Time, getModel().getWidth());</b>
+<b class="fc">&nbsp;        monsterControllerFactory.CreateMonstersAndControllers(Time);</b>
+<b class="fc">&nbsp;        playerController.toDo(game,keyPressed,Time);</b>
+<b class="fc">&nbsp;        bulletsController.toDo(game,keyPressed,Time);</b>
+<b class="fc">&nbsp;        powerUpController.toDo(game,keyPressed, Time);</b>
+<b class="fc">&nbsp;        for (MonsterController monsterController : monsterControllerFactory.getMonstersControllers()) {</b>
+<b class="nc">&nbsp;            monsterController.toDo(game,null,Time);</b>
+<b class="nc">&nbsp;        }</b>
+<b class="fc">&nbsp;        difficultyController.toDo(null,null,0);</b>
+&nbsp;
+<b class="fc">&nbsp;        endGame(game);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    void endGame(Game game){
+<b class="fc">&nbsp;        if(getModel().getPlayer().getHitPoints() &lt;= 0 || monsterControllerFactory.checkWinMonster()) {</b>
+<b class="fc">&nbsp;            soundController.playSound(&quot;GameOver&quot;);</b>
+<b class="fc">&nbsp;            game.popState();</b>
+<b class="fc">&nbsp;            game.pushState(new GameOverMenuState(new GameOverMenuModel()));</b>
+&nbsp;
+<b class="fc">&nbsp;            int finalScore = getModel().getScore().getScore();</b>
+<b class="fc">&nbsp;            PlayerModel playerModel = getModel().getPlayer();</b>
+<b class="fc">&nbsp;            String playerName = playerModel.getPlayerNameModel();</b>
+<b class="fc">&nbsp;            if (playerName == null) {</b>
+<b class="fc">&nbsp;                playerName = playerModel.getPlayerNameModel();</b>
+&nbsp;            }
+&nbsp;
+<b class="fc">&nbsp;            HighScore.updateHighScore(playerName, finalScore);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;    public void setSoundController(SoundController soundController) {
+<b class="fc">&nbsp;        this.soundController = soundController;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-23 00:04</div>
+</div>
+</body>
+</html>
